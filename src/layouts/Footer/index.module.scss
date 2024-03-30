@@ -1,0 +1,102 @@
+@import "/src/assets/styles/variables";
+
+.footer {
+  padding: 60px 0 60px;
+  background-color: #252525;
+
+  .footerLogoWrapper {
+    width: 150px;
+    height: $headerHeight;
+    margin-bottom: 20px;
+  }
+  & a,
+  & h4 {
+    color: $whiteColor;
+  }
+
+  .footerTitle {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .footerItem {
+    margin-top: 10px;
+  }
+  .footerText,
+  a.footerText {
+    transition: all 0.2s;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    color: $grayTextColor;
+    font-weight: 400;
+  }
+  .footerText {
+    margin-top: 7.5px;
+  }
+  .footerText.normal {
+    text-transform: none;
+  }
+
+  .footerSocials {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    .footerSocial {
+      display: inline-flex;
+    }
+    .footerSocial:not(:first-child) {
+      margin-left: 16px;
+    }
+    .footerSocial a {
+      color: $grayTextColor;
+      display: inline-flex;
+    }
+  }
+
+  & a:hover {
+    color: $whiteColor;
+  }
+
+  .footerInputWrapper {
+    margin-top: 10px;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+    input {
+      background-color: #424141;
+      color: $grayTextColor;
+      flex: 1 1 auto;
+      padding: 10px 15px;
+      outline: none;
+      border-width: 0;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      flex: 1;
+      background-color: #424141;
+      border-width: 0;
+      border-left: 1px solid $blackColor;
+    }
+    button:hover {
+      color: $grayTextColor;
+    }
+  }
+  .footerPayment {
+    margin-top: 10px;
+  }
+
+  .footerPaymentTitle {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: $whiteColor;
+  }
+  .footerCol {
+    @media screen and (max-width: 768px) {
+      margin-top: 16px !important;
+    }
+  }
+}

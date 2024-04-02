@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import ScrollButton from "./components/ScrollToTop/ScrollButton";
-import HomePage from "./pages/HomePage";
-import ShopPage from "./pages/ShopPage";
+import ScrollButton from "@/components/ScrollToTop/ScrollButton";
+import HomePage from "@/pages/HomePage";
+import ShopPage from "@/pages/ShopPage";
 
 function App() {
   return (

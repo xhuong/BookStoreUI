@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
 import { CiSearch, CiHeart, CiUser } from "react-icons/ci";
 
-import Container from "../Container";
+import Container from "@/layouts/Container";
 
 import styles from "./index.module.scss";
 

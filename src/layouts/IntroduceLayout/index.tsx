@@ -1,12 +1,12 @@
 import { useMemo } from "react";
 
+import { Col, Row } from "antd";
 import { MdPayment } from "react-icons/md";
 import { FaTruckFast } from "react-icons/fa6";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { IoBagHandleOutline } from "react-icons/io5";
 
-import Introduce from "../../components/Introduce";
-import { Col, Row } from "antd";
+import Introduce from "@/components/Introduce";
 
 export default function IntroduceLayout() {
   const contents = useMemo(

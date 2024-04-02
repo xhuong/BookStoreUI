@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import Container from "../Container";
+import Container from "@/layouts/Container";
 
 import styles from "./index.module.scss";
 

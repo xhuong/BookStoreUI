@@ -1,0 +1,151 @@
+@import "../../assets/styles/variables";
+
+.product {
+  position: relative;
+  overflow: hidden;
+
+  .productImgWrapper {
+    position: relative;
+    max-height: 335px;
+    overflow-y: hidden;
+  }
+  .productButtonWrapper {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    min-width: 100%;
+    top: 100%;
+    transition: opacity 0.4s, transform 0.4s;
+  }
+  .productContent {
+    padding-top: 8px;
+  }
+  .productReviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5px;
+  }
+  .productSelectColor {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+    .productOption {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: rgb(240, 240, 240);
+      &.active {
+        border: 1px solid #000;
+      }
+      & span {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        background-color: $pinkColor;
+        z-index: 1;
+      }
+    }
+  }
+  .productFavorite {
+    cursor: pointer;
+    svg {
+      font-size: 1.8rem;
+      color: #d6dde6;
+    }
+    &.active {
+      svg {
+        color: $blackColor;
+      }
+    }
+  }
+  .productStar {
+    display: flex;
+    svg {
+      font-size: 1.2rem;
+      color: #d6dde6;
+    }
+  }
+  .productReviewsCount {
+    font-size: 1.3rem;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+    color: $grayDarkColor;
+  }
+  .productTitle {
+    display: block;
+    color: $primaryColor;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-all;
+    margin-bottom: 2.5px;
+    text-transform: capitalize;
+    line-height: 1;
+  }
+  .productPrice {
+    font-size: 1.4rem;
+    color: #151515;
+    font-weight: 600;
+  }
+  .productSale,
+  .productDiscount {
+    position: absolute;
+    top: 10px;
+    color: $whiteColor;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding: 2px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  .productSale {
+    left: 10px;
+    background-color: $greencolor;
+  }
+
+  .productDiscount {
+    right: 10px;
+    background-color: $pinkColor;
+  }
+  .productAction {
+    position: absolute;
+    top: 15%;
+    left: 100%;
+    transition: transform 0.4s, opacity 0.4s;
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 10px 20px;
+
+    .productActionItem {
+      cursor: pointer;
+      background-color: $whiteColor;
+      padding: 8px;
+      border-radius: 50%;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+      svg {
+        font-size: 2rem;
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    .productAction {
+      opacity: 1;
+      transform: translateX(-70px);
+    }
+    .productButtonWrapper {
+      opacity: 1;
+      transform: translateY(calc(100% - 92px));
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "../../assets/styles/variables";
+
+.trending {
+  width: 90px;
+  height: 90px;
+  border: 1px solid $grayColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  .trendingName {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+}
+
+.trendingList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+
+  .trendingItem {
+    position: relative;
+    margin: 0 5px;
+    a {
+      display: inline-block;
+      padding: 8px 14px;
+      color: $blackColor;
+      opacity: 0.6;
+    }
+    .trendingLineDashed {
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      svg {
+        display: none;
+        margin: 0 auto;
+      }
+    }
+  }
+  .trendingItemActive {
+    background-color: rgb(240, 240, 240);
+    border-radius: 4px;
+    a {
+      opacity: 1;
+    }
+    .trendingLineDashed {
+      svg {
+        display: block;
+      }
+    }
+  }
+}

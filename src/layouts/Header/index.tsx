@@ -14,7 +14,7 @@ export default function Header() {
         <div className={styles.headerContainer}>
           <div className={styles.navbarLeft}>
             <Link className={styles.headerLogo} to={"/"}>
-              <img src={require("../../assets/images/logo.png")} alt="" />
+              <img src={require("../../assets/images/logo2.png")} alt="" />
             </Link>
             <ul className={styles.navbarList}>
               <li className={styles.navbarItem}>

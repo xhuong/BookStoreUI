@@ -58,33 +58,6 @@
     color: $whiteColor;
   }
 
-  .footerInputWrapper {
-    margin-top: 10px;
-    display: flex;
-    border-radius: 4px;
-    overflow: hidden;
-    input {
-      background-color: #424141;
-      color: $grayTextColor;
-      flex: 1 1 auto;
-      padding: 10px 15px;
-      outline: none;
-      border-width: 0;
-    }
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s;
-      flex: 1;
-      background-color: #424141;
-      border-width: 0;
-      border-left: 1px solid $blackColor;
-    }
-    button:hover {
-      color: $grayTextColor;
-    }
-  }
   .footerPayment {
     margin-top: 10px;
   }

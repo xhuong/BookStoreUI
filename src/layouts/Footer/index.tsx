@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 
 import { Col, Row } from "antd";
-import Container from "../Container";
-
-import { BsArrowRight } from "react-icons/bs";
 import {
   RiInstagramFill,
   RiFacebookFill,
@@ -11,6 +8,8 @@ import {
   RiLinkedinBoxFill,
   RiYoutubeFill,
 } from "react-icons/ri";
+
+import Container from "../Container";
 
 import styles from "./index.module.scss";
 
@@ -25,7 +24,7 @@ function Footer() {
                 <img src={require("../../assets/images/logo.png")} alt="" />
               </div>
               <p className={styles.footerText}>
-                3298 Grant Street Longview, TX United Kingdom 75601
+                155 Dien Bien Phu, Da Nang, VN
               </p>
               <p className={styles.footerText}>1-202-555-0106</p>
               <p className={styles.footerText}>help@shopper.com</p>
@@ -159,12 +158,6 @@ function Footer() {
                 Receive updates, hot deals, discounts sent straignt in your
                 inbox daily
               </p>
-              <form className={`${styles.footerInputWrapper}`}>
-                <input type="email" name="" id="" placeholder="Email Address" />
-                <button className={styles.footerButton}>
-                  <BsArrowRight />
-                </button>
-              </form>
               <div className={styles.footerPayment}>
                 <h6 className={styles.footerPaymentTitle}>Secure payments</h6>
                 <img

@@ -1,0 +1,21 @@
+@import "/src/assets/styles/variables";
+
+.viewCategory {
+  padding: 0 16px;
+  .viewCategoryHeading {
+    font-weight: 600;
+    font-size: 32px;
+    text-transform: capitalize;
+  }
+  .viewCategoryItem {
+    width: 100%;
+    .viewCategoryTitle {
+      text-align: center;
+    }
+    .viewCategoryItemContent {
+      img {
+        box-shadow: 1px 2px 10px $purpleColor;
+      }
+    }
+  }
+}

@@ -1,75 +1,46 @@
 @import "/src/assets/styles/variables";
 
 .footer {
-  padding: 60px 0 60px;
-  background-color: #252525;
-
-  .footerLogoWrapper {
-    width: 150px;
-    height: $headerHeight;
-    margin-bottom: 20px;
-  }
-  & a,
-  & h4 {
-    color: $whiteColor;
-  }
-
-  .footerTitle {
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    font-weight: 500;
-  }
-  .footerItem {
-    margin-top: 10px;
-  }
-  .footerText,
-  a.footerText {
-    transition: all 0.2s;
-    text-transform: capitalize;
-    font-size: 1.5rem;
-    color: $grayTextColor;
-    font-weight: 400;
-  }
-  .footerText {
-    margin-top: 7.5px;
-  }
-  .footerText.normal {
-    text-transform: none;
-  }
-
-  .footerSocials {
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
-    .footerSocial {
-      display: inline-flex;
-    }
-    .footerSocial:not(:first-child) {
-      margin-left: 16px;
-    }
-    .footerSocial a {
-      color: $grayTextColor;
-      display: inline-flex;
-    }
-  }
-
-  & a:hover {
-    color: $whiteColor;
-  }
-
-  .footerPayment {
-    margin-top: 10px;
-  }
-
-  .footerPaymentTitle {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-    color: $whiteColor;
-  }
-  .footerCol {
-    @media screen and (max-width: 768px) {
-      margin-top: 16px !important;
+  padding: 60px 0;
+  color: $whiteColor;
+  border-top-left-radius: 48px;
+  border-top-right-radius: 48px;
+  background-color: $purpleColor;
+  .footerWrapper {
+    padding: 24px;
+    border: 1px solid $whiteColor;
+    border-radius: 12px;
+    .footerList {
+      width: 190px;
+      display: block;
+      max-width: 100%;
+      .footerItem {
+        a {
+          color: $whiteColor;
+        }
+        .footerSocials {
+          display: flex;
+          justify-content: space-between;
+          column-gap: 6px;
+          .footerSocial,
+          .footerSocial span {
+            display: inline-flex;
+            padding: 6px;
+            background-color: $whiteColor;
+            color: $purpleColor;
+            border-radius: 50%;
+          }
+        }
+      }
+      .footerItem:first-child {
+        margin-bottom: 16px;
+      }
+      .footerItem:not(:first-child) {
+        font-family: 300;
+        font-size: 1.4rem;
+        cursor: pointer;
+        margin-bottom: 6px;
+      }
     }
   }
 }

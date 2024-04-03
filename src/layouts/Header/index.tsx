@@ -110,7 +110,7 @@ export default function Header() {
             >
               <CiHeart />
               <span className={styles.headerFavoriteNumber}>
-                {/* {getCountProducts(listProductInWishList)} */}
+                {/* {getCountProducts(listProductInWishList)} */}3
               </span>
             </div>
             <div
@@ -128,7 +128,7 @@ export default function Header() {
             >
               <BsCart />
               <span className={styles.headerCartNumber}>
-                {/* {getCountProducts(listProductInCart)} */}
+                {/* {getCountProducts(listProductInCart)} */}5
               </span>
             </div>
           </div>

@@ -14,7 +14,7 @@ export default function Product({ author, name, price, imgSrc }: IProductType) {
   return (
     <div className={styles.product}>
       <div className={styles.productImg}>
-        <img src={require("@/assets/images/products/book/1.png")} alt="" />
+        <img src={require("@/assets/images/products/book/4.png")} alt="" />
       </div>
       <div className={styles.productContent}>
         <h3 className={styles.productAuthor}>{author}</h3>

@@ -36,9 +36,12 @@
   }
 
   .headerLogo {
-    width: 120px;
+    max-height: $headerHeight;
     height: $headerHeight;
     margin-right: 16px;
+    img {
+      height: 100%;
+    }
   }
 
   .navbarItem {

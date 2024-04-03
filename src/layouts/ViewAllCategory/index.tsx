@@ -1,84 +1,44 @@
 import { Row, Col } from "antd";
 import styles from "./index.module.scss";
+import { ReactNode } from "react";
 
-export default function ViewAllCategory() {
+export type IViewAllCategoryItem = {
+  name: string;
+};
+
+export type IViewAllCategory = {
+  title: string;
+  items: IViewAllCategoryItem[];
+};
+
+export default function ViewAllCategory({
+  title = "View all categories",
+  items,
+}: IViewAllCategory) {
   return (
     <div className={styles.viewCategory}>
-      <h2 className={styles.viewCategoryHeading}>View all categories</h2>
+      <h2 className={styles.viewCategoryHeading}>{title}</h2>
       <Row
         justify={{
           ["xs"]: "start",
-          ["xl"]: "space-evenly",
+          ["xl"]: "start",
           ["md"]: "start",
         }}
         gutter={[8, 8]}
       >
-        <Col xl={2} lg={6} md={6} sm={12} xs={8}>
-          <div className={styles.viewCategoryItem}>
-            <div className={styles.viewCategoryItemContent}>
-              <img
-                src={require("../../assets/images/products/book/1.png")}
-                alt=""
-              />
+        {items.map((item: { name: string }) => (
+          <Col xl={4} lg={6} md={6} sm={12} xs={8}>
+            <div className={styles.viewCategoryItem}>
+              <div className={styles.viewCategoryItemContent}>
+                <img
+                  src={require("../../assets/images/products/book/4.png")}
+                  alt=""
+                />
+              </div>
+              <h5 className={styles.viewCategoryTitle}>{item.name}</h5>
             </div>
-            <h4 className={styles.viewCategoryTitle}>Education Curriculum</h4>
-          </div>
-        </Col>
-        <Col xl={2} lg={6} md={6} sm={12} xs={8}>
-          <div className={styles.viewCategoryItem}>
-            <div className={styles.viewCategoryItemContent}>
-              <img
-                src={require("../../assets/images/products/book/1.png")}
-                alt=""
-              />
-            </div>
-            <h4 className={styles.viewCategoryTitle}>Education Curriculum</h4>
-          </div>
-        </Col>
-        <Col xl={2} lg={6} md={6} sm={12} xs={8}>
-          <div className={styles.viewCategoryItem}>
-            <div className={styles.viewCategoryItemContent}>
-              <img
-                src={require("../../assets/images/products/book/1.png")}
-                alt=""
-              />
-            </div>
-            <h4 className={styles.viewCategoryTitle}>Education Curriculum</h4>
-          </div>
-        </Col>
-        <Col xl={2} lg={6} md={6} sm={12} xs={8}>
-          <div className={styles.viewCategoryItem}>
-            <div className={styles.viewCategoryItemContent}>
-              <img
-                src={require("../../assets/images/products/book/1.png")}
-                alt=""
-              />
-            </div>
-            <h4 className={styles.viewCategoryTitle}>Education Curriculum</h4>
-          </div>
-        </Col>
-        <Col xl={2} lg={6} md={6} sm={12} xs={8}>
-          <div className={styles.viewCategoryItem}>
-            <div className={styles.viewCategoryItemContent}>
-              <img
-                src={require("../../assets/images/products/book/1.png")}
-                alt=""
-              />
-            </div>
-            <h4 className={styles.viewCategoryTitle}>Education Curriculum</h4>
-          </div>
-        </Col>
-        <Col xl={2} lg={6} md={6} sm={12} xs={8}>
-          <div className={styles.viewCategoryItem}>
-            <div className={styles.viewCategoryItemContent}>
-              <img
-                src={require("../../assets/images/products/book/1.png")}
-                alt=""
-              />
-            </div>
-            <h4 className={styles.viewCategoryTitle}>Education Curriculum</h4>
-          </div>
-        </Col>
+          </Col>
+        ))}
       </Row>
     </div>
   );

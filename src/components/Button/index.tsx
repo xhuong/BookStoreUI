@@ -1,23 +1,22 @@
 import { Button as AntButton } from "antd";
 import styled from "styled-components";
 
+// import { ButtonProps } from "antd";
+
+// import styles from "./index.module.scss";
+
+// export default function Button(props: ButtonProps) {
+//   return <AntButton {...props}>{props.children}</AntButton>;
+// }
+
 type Props = {
   btnType: string;
-  btnSize: string;
+  btnSize?: string;
+  isRounded?: boolean;
 };
-
 const Button = styled(AntButton)`
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  column-gap: 10px;
-  font-size: 1.4rem;
-  line-height: 1.25;
-  text-transform: capitalize;
-  transition: all 0.4s;
-  height: 46px;
-  justify-content: center;
-
+  height: unset;
+  padding: 8px 16px;
   ${(props: Props) =>
     props.btnType === "primary" &&
     `
@@ -33,36 +32,24 @@ const Button = styled(AntButton)`
   }
   `}
 
-  ${(props: Props) =>
+  ${(props) =>
     props.btnType === "secondary" &&
     `
   border: none;
   color: #ffffff;
-  background-color: #151515;
+  background-color: #a487db;
   border-radius: unset;
 
   &:hover,
   &:focus{
     color: #ffffff;
-    background-color: #151515;
+    background-color: #a487db;
   }`}
 
-  ${(props: Props) =>
-    props.btnSize === "sm-btn" &&
+  ${(props) =>
+    props.isRounded &&
     `
-  width: 146px;
-  `}
-
-  ${(props: Props) =>
-    props.btnSize === "md-btn" &&
-    `
-  width: 166px;
-  `}
-
-  ${(props: Props) =>
-    props.btnSize === "full-btn" &&
-    `
-  width: 100%;
+    border-radius: 4px;
   `}
 `;
 

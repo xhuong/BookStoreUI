@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import ScrollButton from "@/components/ScrollToTop/ScrollButton";
 import HomePage from "@/pages/HomePage";
 import ShopPage from "@/pages/ShopPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 function App() {
   return (
@@ -11,10 +12,11 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/shop" element={<ShopPage />} />
+            <Route path="/product/:id" element={<ProductDetailsPage />} />
           </Routes>
         </Router>
       </div>
-      <ScrollButton />
+      {/* <ScrollButton /> */}
     </div>
   );
 }

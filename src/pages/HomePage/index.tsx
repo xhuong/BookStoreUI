@@ -11,8 +11,16 @@ const HomePage = () => {
       <Header />
       <SimpleSlider />
       <IntroduceLayout />
-      <ProductList />
-      <ViewAllCategory />
+      <ProductList title="Trending products" subTitle="Trending products" />
+      <ProductList title="Top products" subTitle="Top products" />
+      <ViewAllCategory
+        title="View All Category"
+        items={[
+          { name: "Lorem ipsum dolor sit amet consectetur." },
+          { name: "Lorem ipsum dolor sit amet consectetur." },
+          { name: "Lorem ipsum dolor sit amet consectetur." },
+        ]}
+      />
       <Footer />
     </>
   );

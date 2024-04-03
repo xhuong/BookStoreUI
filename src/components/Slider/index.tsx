@@ -6,8 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Button from "../../components/Button";
-import Container from "../../layouts/Container";
+import Container from "@/layouts/Container";
 
 import styles from "./index.module.scss";
 

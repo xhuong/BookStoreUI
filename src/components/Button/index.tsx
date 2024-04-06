@@ -5,6 +5,8 @@ type Props = {
   btnType: string;
   btnSize?: string;
   isRounded?: boolean;
+  isFullWidth?: boolean;
+  mt12?: boolean;
 };
 const Button = styled(AntButton)`
   height: unset;
@@ -42,6 +44,16 @@ const Button = styled(AntButton)`
     props.isRounded &&
     `
     border-radius: 4px;
+  `}
+  ${(props) =>
+    props.isFullWidth &&
+    `
+    width: 100%;
+  `}
+  ${(props) =>
+    props.mt12 &&
+    `
+   margin-top: 12px;
   `}
 
   svg {

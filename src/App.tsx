@@ -2,8 +2,9 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import ScrollButton from "@/components/ScrollToTop/ScrollButton";
 import HomePage from "@/pages/HomePage";
 import ShopPage from "@/pages/ShopPage";
-import ProductDetailsPage from "./pages/ProductDetailsPage";
-import CartPage from "./pages/CartPage";
+import ProductDetailsPage from "@/pages/ProductDetailsPage";
+import CartPage from "@/pages/CartPage";
+import LoginPage from "@/pages/LoginPage";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
             <Route path="/product/:id" element={<ProductDetailsPage />} />
             {/* need to be protect this router  */}
             <Route path="/my-cart" element={<CartPage />} />
+            {/* need to be check auth before access this router  */}
+            <Route path="/login" element={<LoginPage />} />
           </Routes>
         </Router>
       </div>

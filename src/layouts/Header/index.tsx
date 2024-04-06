@@ -1,13 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { BsCart } from "react-icons/bs";
 import { CiSearch, CiHeart, CiUser } from "react-icons/ci";
+import { ToastContainer, toast } from "react-toastify";
 
 import Container from "@/layouts/Container";
 
 import styles from "./index.module.scss";
 
 export default function Header() {
+  const notify = () => toast("It so easy");
+
+  const navigate = useNavigate();
+
   return (
     <div className={styles.header}>
       <Container>
@@ -68,7 +73,7 @@ export default function Header() {
             </div>
             {/* <div className={styles.headerIcon} onClick={handleClickUser}> */}
             <div className={styles.headerIcon}>
-              <CiUser />
+              <CiUser onClick={notify} />
               {/* {isAuthenticated && (
                 <ul
                   className={styles.headerAction}
@@ -115,6 +120,7 @@ export default function Header() {
             </div>
             <div
               className={styles.headerIcon}
+              onClick={() => navigate("/my-cart")}
               //   onClick={() =>
               //     dispatch(
               //       openSidebar({
@@ -136,6 +142,7 @@ export default function Header() {
           {/* {isActiveModal && <ModalLoginForm />} */}
         </div>
       </Container>
+      <ToastContainer autoClose={5000} />
     </div>
   );
 }

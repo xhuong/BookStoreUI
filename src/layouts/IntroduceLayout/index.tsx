@@ -7,6 +7,7 @@ import { FaHandHoldingHeart } from "react-icons/fa";
 import { IoBagHandleOutline } from "react-icons/io5";
 
 import Introduce from "@/components/Introduce";
+import Container from "@/layouts/Container";
 
 export default function IntroduceLayout() {
   const contents = useMemo(
@@ -36,17 +37,19 @@ export default function IntroduceLayout() {
   );
   return (
     <div style={{ padding: "16px" }}>
-      <Row justify="space-between" gutter={[24, 24]}>
-        {contents.map((item) => (
-          <Col xl={6} lg={8} md={8} sm={12} xs={24}>
-            <Introduce
-              heading={item.heading}
-              desc={item.desc}
-              icon={item.icon}
-            />
-          </Col>
-        ))}
-      </Row>
+      <Container>
+        <Row justify="space-between" gutter={[24, 24]}>
+          {contents.map((item) => (
+            <Col xl={6} lg={8} md={8} sm={12} xs={24}>
+              <Introduce
+                heading={item.heading}
+                desc={item.desc}
+                icon={item.icon}
+              />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }

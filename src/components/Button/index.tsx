@@ -1,14 +1,6 @@
 import { Button as AntButton } from "antd";
 import styled from "styled-components";
 
-// import { ButtonProps } from "antd";
-
-// import styles from "./index.module.scss";
-
-// export default function Button(props: ButtonProps) {
-//   return <AntButton {...props}>{props.children}</AntButton>;
-// }
-
 type Props = {
   btnType: string;
   btnSize?: string;
@@ -51,6 +43,10 @@ const Button = styled(AntButton)`
     `
     border-radius: 4px;
   `}
+
+  svg {
+    margin-left: 8px;
+  }
 `;
 
 export default Button;

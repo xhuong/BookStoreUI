@@ -3,6 +3,7 @@ import ScrollButton from "@/components/ScrollToTop/ScrollButton";
 import HomePage from "@/pages/HomePage";
 import ShopPage from "@/pages/ShopPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/shop" element={<ShopPage />} />
             <Route path="/product/:id" element={<ProductDetailsPage />} />
+            {/* need to be protect this router  */}
+            <Route path="/my-cart" element={<CartPage />} />
           </Routes>
         </Router>
       </div>

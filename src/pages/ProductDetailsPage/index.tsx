@@ -6,8 +6,12 @@ export default function ProductDetailsPage() {
   return (
     <>
       <Header />
-      <ProductDetailsLayout />
-      {/* <Footer /> */}
+      <ProductDetailsLayout
+        bookName="Book 1"
+        categoryName="Curricular"
+        price={100000}
+      />
+      <Footer />
     </>
   );
 }

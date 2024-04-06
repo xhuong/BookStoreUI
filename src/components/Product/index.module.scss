@@ -6,6 +6,17 @@
   border-radius: 8px;
   border: 1px solid $purpleColor;
   overflow: hidden;
+  .newLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 4px 8px;
+    background-color: rgb(84, 243, 92);
+    color: $whiteColor;
+    font-size: 1.2rem;
+    border-bottom-right-radius: 8px;
+  }
   .productImg {
     height: 240px;
     overflow: hidden;
@@ -25,10 +36,19 @@
       font-weight: 400;
       font-size: 1.4rem;
     }
-    .productPrice {
-      font-weight: 400;
-      font-size: 1.2rem;
-      color: $purpleColor;
+    .productPriceWrapper {
+      display: flex;
+      justify-content: space-between;
+      .productPrice {
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: $purpleColor;
+      }
+      :global {
+        .ant-rate {
+          font-size: 1.2rem;
+        }
+      }
     }
   }
   .productActions {

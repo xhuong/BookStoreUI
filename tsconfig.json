@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["@types/react-slick@0.23.13"],
+    "types": ["@types/react-slick"],
     "paths": {
       "@/*": ["./src/*"]
     }

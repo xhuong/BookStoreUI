@@ -1,6 +1,7 @@
 @import "../../assets/styles/variables";
 
 .product {
+  cursor: pointer;
   padding: 12px;
   position: relative;
   border-radius: 8px;
@@ -12,7 +13,7 @@
     left: 0;
     display: block;
     padding: 4px 8px;
-    background-color: rgb(84, 243, 92);
+    background-color: rgb(74, 222, 128);
     color: $whiteColor;
     font-size: 1.2rem;
     border-bottom-right-radius: 8px;
@@ -29,12 +30,19 @@
   }
   .productContent {
     .productAuthor {
-      font-size: 1rem;
-      font-weight: 300;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 6px;
     }
     .productName {
-      font-weight: 400;
+      font-weight: 600;
       font-size: 1.4rem;
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
     .productPriceWrapper {
       display: flex;

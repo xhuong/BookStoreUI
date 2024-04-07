@@ -18,7 +18,7 @@ export default function Section(props: Props) {
   return (
     <div className={styles.section}>
       <Container>
-        <h2 className={`${styles.sectionTitle} ${styles.active}`}>
+        <h2 className={`${styles.sectionTitle}`}>
           {title}
           <span className={styles.sectionSubtitle}>{subTitle}</span>
           <FaBook />

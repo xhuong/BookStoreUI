@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { ECartView } from "@/redux/slices/cart";
 import { Col, Row } from "antd";
 
 import { MdRemoveShoppingCart } from "react-icons/md";
@@ -6,25 +8,18 @@ import Button from "@/components/Button";
 import InputNumber from "@/components/InputNumber";
 
 import styles from "./index.module.scss";
-import { useState } from "react";
 
-export enum ECartView {
-  "cartview" = "CART_VIEW",
-  "orderview" = "ORDER_VIEW",
-  "wishlistview" = "WISH_LIST_VIEW",
-}
-export default function Cart() {
-  const [defaultView, setDefaultView] = useState<ECartView>(ECartView.cartview);
+export default function CartView() {
+  const defaultView = useSelector((state: any) => state.cart.cartView);
 
   return (
     <div className={styles.cart}>
       <div className={styles.cartHeader}>
-        <span>My {defaultView === ECartView.cartview ? "Cart" : "Order"}</span>
-        {defaultView === ECartView.cartview && (
-          <Button btnType="secondary" isRounded btnSize="m" onClick={() => {}}>
-            Check out
-          </Button>
-        )}
+        <span>My cart</span>
+
+        <Button btnType="secondary" isRounded btnSize="m" onClick={() => {}}>
+          Check out
+        </Button>
       </div>
       <div className={styles.cartTable}>
         <Row gutter={[12, 12]}>
@@ -75,13 +70,10 @@ export default function Cart() {
         </Row>
       </div>
       <div className={styles.cartFooter}>
-        {defaultView === ECartView.cartview ? (
-          <Button btnType="primary" btnSize="m" isRounded>
-            Clear cart <MdRemoveShoppingCart />
-          </Button>
-        ) : (
-          <span>Paid using COD method</span>
-        )}
+        <Button btnType="primary" btnSize="m" isRounded>
+          Clear cart <MdRemoveShoppingCart />
+        </Button>
+
         <p className={styles.totalPrice}>
           Total: <span>$400</span>
         </p>

@@ -135,7 +135,7 @@ export default function ShopLayout() {
         </Form>
       </Col>
       <Col xl={20}>
-        <ProductList title="Trending products" subTitle="Trending products" />
+        {/* <ProductList title="Trending products" subTitle="Trending products" /> */}
       </Col>
     </Row>
   );

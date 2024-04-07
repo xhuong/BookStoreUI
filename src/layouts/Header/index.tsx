@@ -2,16 +2,19 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { BsCart } from "react-icons/bs";
 import { CiSearch, CiHeart, CiUser } from "react-icons/ci";
-import { ToastContainer, toast } from "react-toastify";
 
 import Container from "@/layouts/Container";
 
 import styles from "./index.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { getCountBooks } from "@/utils/common";
+import { ECartView, changeCartView } from "@/redux/slices/cart";
 
 export default function Header() {
-  const notify = () => toast("It so easy");
-
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const listBooksInCart = useSelector((state: any) => state.cart.cart);
+  const listBooksInWishList = useSelector((state: any) => state.cart.wishlist);
 
   return (
     <div className={styles.header}>
@@ -73,7 +76,7 @@ export default function Header() {
             </div>
             {/* <div className={styles.headerIcon} onClick={handleClickUser}> */}
             <div className={styles.headerIcon}>
-              <CiUser onClick={notify} />
+              <CiUser />
               {/* {isAuthenticated && (
                 <ul
                   className={styles.headerAction}
@@ -112,10 +115,15 @@ export default function Header() {
               //       })
               //     )
               //   }
+
+              onClick={() => {
+                dispatch(changeCartView(ECartView.wishlistview));
+                navigate("/my-cart");
+              }}
             >
               <CiHeart />
               <span className={styles.headerFavoriteNumber}>
-                {/* {getCountProducts(listProductInWishList)} */}3
+                {getCountBooks(listBooksInWishList)}
               </span>
             </div>
             <div
@@ -134,7 +142,7 @@ export default function Header() {
             >
               <BsCart />
               <span className={styles.headerCartNumber}>
-                {/* {getCountProducts(listProductInCart)} */}5
+                {getCountBooks(listBooksInCart)}
               </span>
             </div>
           </div>
@@ -142,7 +150,6 @@ export default function Header() {
           {/* {isActiveModal && <ModalLoginForm />} */}
         </div>
       </Container>
-      <ToastContainer autoClose={5000} />
     </div>
   );
 }

@@ -1,28 +1,57 @@
-import SimpleSlider from "@/components/Slider";
+import { useEffect, useState } from "react";
+
+import { mapBackendDataToBookUI } from "@/utils/common";
+
 import Footer from "@/layouts/Footer";
 import Header from "@/layouts/Header";
-import IntroduceLayout from "@/layouts/IntroduceLayout";
 import ProductList from "@/layouts/ProductList";
 import ViewAllCategory from "@/layouts/ViewAllCategory";
+import IntroduceLayout from "@/layouts/IntroduceLayout";
+
+import { IProductType } from "@/components/Product";
+import SimpleSlider from "@/components/Slider";
+
+import { useGetNewestBooksQuery } from "@/services/BookAPI";
+import { useDispatch } from "react-redux";
+import { activeLoading, deactiveLoading } from "@/redux/slices/loading";
 
 const HomePage = () => {
+  const dispatch = useDispatch();
+
+  const [newestBooks, setNewestBook] = useState<IProductType[]>([]);
+
+  const { data, isSuccess } = useGetNewestBooksQuery(null, {
+    refetchOnMountOrArgChange: true,
+  });
+
+  useEffect(() => {
+    dispatch(activeLoading());
+    if (isSuccess) {
+      const { data: response } = data?.result;
+      const dataConverted = mapBackendDataToBookUI(response);
+      setNewestBook(dataConverted);
+      dispatch(deactiveLoading());
+    }
+  }, [data, isSuccess]);
+
   return (
     <>
       <Header />
       <SimpleSlider />
       <IntroduceLayout />
       <ViewAllCategory
-        title="View All Category"
+        title="View all categories"
         items={[
           { name: "Lorem ipsum dolor sit amet consectetur." },
           { name: "Lorem ipsum dolor sit amet consectetur." },
           { name: "Lorem ipsum dolor sit amet consectetur." },
         ]}
       />
-      <ProductList title="Trending products" subTitle="Trending products" />
-      <ProductList title="Top products" subTitle="Top products" />
-      <ProductList title="Bestselling books of week" subTitle="XH Book store" />
-      <ProductList title="New books" subTitle="XH Book store" />
+      <ProductList
+        title="Newest products"
+        subTitle="Newest products"
+        data={newestBooks}
+      />
       <Footer />
     </>
   );

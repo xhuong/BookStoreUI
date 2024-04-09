@@ -10,7 +10,7 @@ import { Bounce, toast } from "react-toastify";
 
 import styles from "./index.module.scss";
 
-export type IProductType = {
+export type IBookType = {
   id: number;
   name: string;
   price: number;
@@ -18,7 +18,7 @@ export type IProductType = {
   imgSrc: string;
 };
 
-export default function Product({ book }: { book: IProductType }) {
+export default function Product({ book }: { book: IBookType }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

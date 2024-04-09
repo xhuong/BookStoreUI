@@ -1,4 +1,4 @@
-import { IProductType } from "@/components/Product";
+import { IBookType } from "@/components/Product";
 
 export const formatPrice = (price: number) => {
   return new Intl.NumberFormat("en-DE").format(price) + " VNĐ";
@@ -50,7 +50,7 @@ export interface IBookBE {
   date_added: Date;
 }
 
-export const mapBackendDataToBookUI = (books: IBookBE[]): IProductType[] => {
+export const mapBackendDataToBookUI = (books: IBookBE[]): IBookType[] => {
   return books.map((book) => ({
     id: book.id,
     name: book.name,

@@ -1,12 +1,12 @@
 import { Col, Row } from "antd";
 
 import Section from "@/components/Section";
-import Product, { IProductType } from "@/components/Product";
+import Product, { IBookType } from "@/components/Product";
 
 export type IProductList = {
   title: string;
   subTitle: string;
-  data: IProductType[];
+  data: IBookType[];
 };
 
 export default function ProductList({ title, subTitle, data }: IProductList) {
@@ -20,7 +20,7 @@ export default function ProductList({ title, subTitle, data }: IProductList) {
         }}
         gutter={[12, 12]}
       >
-        {data.map((book: IProductType) => (
+        {data.map((book: IBookType) => (
           <Col xl={4} lg={4} md={6} sm={12} xs={8} key={book.id}>
             <Product book={book} />
           </Col>

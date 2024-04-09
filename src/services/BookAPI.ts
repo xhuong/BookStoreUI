@@ -1,4 +1,3 @@
-import { IProductType } from "@/components/Product";
 import { IBookBE } from "@/utils/common";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 

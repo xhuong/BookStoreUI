@@ -128,7 +128,10 @@ export default function Header() {
             </div>
             <div
               className={styles.headerIcon}
-              onClick={() => navigate("/my-cart")}
+              onClick={() => {
+                dispatch(changeCartView(ECartView.cartview));
+                navigate("/my-cart");
+              }}
               //   onClick={() =>
               //     dispatch(
               //       openSidebar({

@@ -7,11 +7,11 @@ import Container from "@/layouts/Container";
 
 import Button from "@/components/Button";
 import InputNumber from "@/components/InputNumber";
-import { IProductType } from "@/components/Product";
+import { IBookType } from "@/components/Product";
 
 import styles from "./index.module.scss";
 
-export default function ProductDetailsLayout({ book }: { book: IProductType }) {
+export default function ProductDetailsLayout({ book }: { book: IBookType }) {
   const { id, author, imgSrc, name, price } = book;
   return (
     <div className={styles.proDetail} style={{ marginTop: " 107.2px" }}>

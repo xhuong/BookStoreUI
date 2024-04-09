@@ -135,7 +135,19 @@ export default function ShopLayout() {
         </Form>
       </Col>
       <Col xl={20}>
-        {/* <ProductList title="Trending products" subTitle="Trending products" /> */}
+        <ProductList
+          data={[
+            {
+              id: 1,
+              author: "adasdsad",
+              imgSrc: "3.png",
+              name: "sadasd",
+              price: 500,
+            },
+          ]}
+          title="Trending products"
+          subTitle="Trending products"
+        />
       </Col>
     </Row>
   );

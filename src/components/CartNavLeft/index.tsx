@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ECartView, changeCartView } from "@/redux/slices/cart";
 
@@ -5,13 +6,13 @@ import styles from "./index.module.scss";
 
 export default function CartNavLeft() {
   const dispatch = useDispatch();
-  const cartView = useSelector((state: any) => state.cart.cartView);
+  const currentView = useSelector((state: any) => state.cart.view);
 
   return (
     <ul className={styles.cartNav}>
       <li
         className={`${styles.cartNavItem} ${
-          cartView === ECartView.cartview && styles.active
+          currentView === ECartView.cartview && styles.active
         }`}
         onClick={() => {
           dispatch(changeCartView(ECartView.cartview));
@@ -21,7 +22,7 @@ export default function CartNavLeft() {
       </li>
       <li
         className={`${styles.cartNavItem} ${
-          cartView === ECartView.wishlistview && styles.active
+          currentView === ECartView.wishlistview && styles.active
         }`}
         onClick={() => {
           dispatch(changeCartView(ECartView.wishlistview));
@@ -31,7 +32,7 @@ export default function CartNavLeft() {
       </li>
       <li
         className={`${styles.cartNavItem} ${
-          cartView === ECartView.orderview && styles.active
+          currentView === ECartView.orderview && styles.active
         }`}
         onClick={() => {
           dispatch(changeCartView(ECartView.orderview));

@@ -8,7 +8,7 @@ import Footer from "@/layouts/Footer";
 import Header from "@/layouts/Header";
 import ProductDetailsLayout from "@/layouts/ProductDetailsLayout";
 
-import { IProductType } from "@/components/Product";
+import { IBookType } from "@/components/Product";
 import { useDispatch } from "react-redux";
 import { activeLoading, deactiveLoading } from "@/redux/slices/loading";
 
@@ -16,7 +16,7 @@ export default function ProductDetailsPage() {
   const { id } = useParams();
   const dispath = useDispatch();
 
-  const [bookDetail, setBookDetail] = useState<IProductType>();
+  const [bookDetail, setBookDetail] = useState<IBookType>();
 
   const { data, isLoading, isSuccess } = useGetBookByIdQuery(
     { id: Number(id) },

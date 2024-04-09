@@ -8,7 +8,7 @@ import ProductList from "@/layouts/ProductList";
 import ViewAllCategory from "@/layouts/ViewAllCategory";
 import IntroduceLayout from "@/layouts/IntroduceLayout";
 
-import { IProductType } from "@/components/Product";
+import { IBookType } from "@/components/Product";
 import SimpleSlider from "@/components/Slider";
 
 import { useGetNewestBooksQuery } from "@/services/BookAPI";
@@ -18,7 +18,7 @@ import { activeLoading, deactiveLoading } from "@/redux/slices/loading";
 const HomePage = () => {
   const dispatch = useDispatch();
 
-  const [newestBooks, setNewestBook] = useState<IProductType[]>([]);
+  const [newestBooks, setNewestBook] = useState<IBookType[]>([]);
 
   const { data, isSuccess } = useGetNewestBooksQuery(null, {
     refetchOnMountOrArgChange: true,

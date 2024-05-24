@@ -11,6 +11,8 @@ import ProductDetailsLayout from "@/layouts/ProductDetailsLayout";
 import { IBookType } from "@/components/Product";
 import { useDispatch } from "react-redux";
 import { activeLoading, deactiveLoading } from "@/redux/slices/loading";
+import Container from "@/layouts/Container";
+import BreadCrumb from "@/components/BreadCrumb";
 
 export default function ProductDetailsPage() {
   const { id } = useParams();
@@ -36,6 +38,9 @@ export default function ProductDetailsPage() {
   return (
     <>
       <Header />
+      <Container isMarginTopEqualHeaderHeight>
+        <BreadCrumb />
+      </Container>
       {bookDetail && <ProductDetailsLayout book={bookDetail} />}
       <Footer />
     </>

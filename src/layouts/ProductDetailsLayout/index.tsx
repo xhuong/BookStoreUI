@@ -7,14 +7,14 @@ import Container from "@/layouts/Container";
 
 import Button from "@/components/Button";
 import InputNumber from "@/components/InputNumber";
-import { IBookType } from "@/components/Product";
+import Product, { IBookType } from "@/components/Product";
 
 import styles from "./index.module.scss";
 
 export default function ProductDetailsLayout({ book }: { book: IBookType }) {
   const { id, author, imgSrc, name, price } = book;
   return (
-    <div className={styles.proDetail} style={{ marginTop: " 107.2px" }}>
+    <div className={styles.proDetail} style={{ marginTop: "20px" }}>
       <Container>
         <Row gutter={[24, 24]}>
           <Col xl={12} md={12}>
@@ -94,6 +94,17 @@ export default function ProductDetailsLayout({ book }: { book: IBookType }) {
         <Row gutter={[24, 24]}>
           <Col xl={12}></Col>
         </Row>
+
+        {/* Book recommendations  */}
+        {/* <Row>
+          <Col xl={24}>
+            <Row>
+              <Col xl={4}>
+                <Product book={} />
+              </Col>
+            </Row>
+          </Col>
+        </Row> */}
       </Container>
     </div>
   );

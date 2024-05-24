@@ -10,6 +10,14 @@ interface IBookTypes {
   };
 }
 
+export interface IPayloadSearchBookDto {
+  name?: string;
+  min_price?: number;
+  max_price?: number;
+  author_id?: number;
+  publisher_id?: number;
+}
+
 export const BookAPI = createApi({
   reducerPath: "BookAPI",
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_API_URL }),
@@ -19,10 +27,17 @@ export const BookAPI = createApi({
     }),
     getBookById: builder.query<IBookTypes, { id: number }>({
       query: ({ id }) => {
-        return `book/${id}`;
+        return `/book/${id}`;
       },
     }),
-    // getNewestProducts: builder.query({
+    getListBooks: builder.query<IBookTypes, IPayloadSearchBookDto>({
+      query: (payload) => ({
+        url: "/book",
+        method: "POST",
+        body: payload ?? {},
+      }),
+    }),
+    // getListOfBooksRecommendation: builder.query({
     //   query: () => "/products/newest",
     // }),
     // getProductsByFilter: builder.query({
@@ -54,6 +69,8 @@ export const BookAPI = createApi({
 export const {
   useGetNewestBooksQuery,
   useGetBookByIdQuery,
+  useGetListBooksQuery,
+  useLazyGetListBooksQuery,
   //   useLazyGetProductsByFilterQuery,
   //   useGetTrendingProductsQuery,
   //   useLazyGetListProductsOrderedQuery,

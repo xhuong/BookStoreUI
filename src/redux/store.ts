@@ -6,12 +6,16 @@ import cartSlice from "@/redux/slices/cart";
 
 import { BookAPI } from "@/services/BookAPI";
 import { OrderAPI } from "@/services/OrderAPI";
+import { PublisherAPI } from "@/services/PublisherAPI";
+import { AuthorAPI } from "@/services/AuthorAPI";
 
 const rootReducer = combineReducers({
   cart: cartSlice,
   loading: loadingSlice,
   [BookAPI.reducerPath]: BookAPI.reducer,
   [OrderAPI.reducerPath]: OrderAPI.reducer,
+  [AuthorAPI.reducerPath]: AuthorAPI.reducer,
+  [PublisherAPI.reducerPath]: PublisherAPI.reducer,
 });
 
 const store = configureStore({
@@ -19,6 +23,8 @@ const store = configureStore({
   middleware: (getDefaultMiddleWare) =>
     getDefaultMiddleWare()
       .concat(BookAPI.middleware)
+      .concat(AuthorAPI.middleware)
+      .concat(PublisherAPI.middleware)
       .concat(OrderAPI.middleware),
 });
 
